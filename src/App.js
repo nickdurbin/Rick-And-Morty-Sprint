@@ -13,6 +13,7 @@ function App() {
       {/* <TabNav /> */}
         <Route exact path='/' component={WelcomePage} />
         <Route path='/characters' component={CharacterList} />
+        <Route path='/location' component={LocationList} />
     </main>
   );
 }
