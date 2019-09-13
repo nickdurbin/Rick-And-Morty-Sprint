@@ -7,7 +7,7 @@ const Card = styled.div`
   border: none;
   border-radius: 5px;
   margin: 10px 0;
-  border-shadow: 0 19px 38px;
+  box-shadow: 0 5px 10px;
 `;
 
 const Details = styled.div`

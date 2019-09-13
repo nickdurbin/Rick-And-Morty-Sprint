@@ -11,18 +11,18 @@ const Card = styled.div`
   box-shadow: 0 5px 10px;
 `;
 
-function LocationCard({ locationList }) {
+function EpisodeCard({ episodeList }) {
   return (
     <>
-      {locationList.map((card, index) => (
+      {episodeList.map((card, index) => (
         <Card key={index} index={index}>
           <h2> {card.name} </h2>
-          <h4> {card.type} </h4>
-          <h4> {card.dimension} </h4>
+          <h4> {card.air_date} </h4>
+          <h4> {card.episode} </h4>
         </Card>
       ))}
     </>
   )
 }
 
-export default LocationCard;
+export default EpisodeCard;

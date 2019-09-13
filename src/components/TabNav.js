@@ -1,15 +1,45 @@
-import React from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
+import React, { Component } from 'react'
+import { Input, Menu, Segment } from 'semantic-ui-react'
 import { NavLink } from "react-router-dom";
 
-// TODO: Add missing menu/tabs/nav below
+export default class TabNav extends Component {
+  state = { activeItem: 'home' }
 
-// Review Semantic UI Component options for nav-like UI:
-// https://react.semantic-ui.com/collections/menu/
-// https://react.semantic-ui.com/modules/tab/
-// https://react.semantic-ui.com/elements/button/
-// https://react.semantic-ui.com/collections/breadcrumb/
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-export default function TabNav() {
+  render() {
+    const { activeItem } = this.state
 
-};
+    return (
+      <div>
+        <Menu pointing>
+          <Menu.Item
+            name='home'
+            active={activeItem === 'home'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name='characters'
+            active={activeItem === 'characters'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name='location'
+            active={activeItem === 'location'}
+            onClick={this.handleItemClick}
+          />
+            <Menu.Item
+            name='episodes'
+            active={activeItem === 'episodes'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Menu position='right'>
+            <Menu.Item>
+              <Input icon='search' placeholder='Search...' />
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu>
+      </div>
+    )
+  }
+}
