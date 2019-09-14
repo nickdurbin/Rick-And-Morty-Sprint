@@ -5,6 +5,11 @@ import CharacterCard from './CharacterCard';
 function CharacterList() {
   const [cardList, setCardList] = useState([]);
 
+  const deleteCard = (id) => {
+    const NewCards = cardList.filter((card) => card.id !== id)
+    setCardList(NewCards);
+  }
+
   useEffect(() => {
     Axios.get('https://rickandmortyapi.com/api/character/')
       .then(res => {
@@ -18,7 +23,7 @@ function CharacterList() {
 
   return (
     <section className="character-list grid-view">
-      <CharacterCard cardList={cardList}/>
+      <CharacterCard cardList={cardList} deleteCard={deleteCard} />
     </section>
   );
 }

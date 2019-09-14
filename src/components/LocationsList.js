@@ -5,6 +5,11 @@ import LocationCard from './LocationCard';
 function LocationList() {
   const [locationList, setLocationList] = useState([]);
 
+  const deleteCard = (id) => {
+    const NewCards = locationList.filter((card) => card.id !== id)
+    setLocationList(NewCards);
+  }
+
   useEffect(() => {
     Axios.get('https://rickandmortyapi.com/api/location/')
       .then(res => {
@@ -18,7 +23,7 @@ function LocationList() {
 
   return (
     <section className="location-list grid-view">
-      <LocationCard locationList={locationList}/>
+      <LocationCard locationList={locationList} deleteCard={deleteCard}/>
     </section>
   );
 }

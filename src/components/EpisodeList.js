@@ -5,6 +5,11 @@ import EpisodeCard from './EpisodeCard';
 function EpisodeList() {
   const [episodeList, setEpisodeList] = useState([]);
 
+  const deleteCard = (id) => {
+    const NewCards = episodeList.filter((card) => card.id !== id)
+    setEpisodeList(NewCards);
+  }
+
   useEffect(() => {
     Axios.get('https://rickandmortyapi.com/api/episode/')
       .then(res => {
@@ -18,7 +23,7 @@ function EpisodeList() {
 
   return (
     <section className="episode-list grid-view">
-      <EpisodeCard episodeList={episodeList}/>
+      <EpisodeCard episodeList={episodeList} deleteCard={deleteCard}/>
     </section>
   );
 }
