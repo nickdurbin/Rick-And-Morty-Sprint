@@ -1,6 +1,9 @@
 import React from "react";
-import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
+import { zoomIn } from 'react-animations';
+
+const fadeAnimation = keyframes`${zoomIn}`;
 
 const Card = styled.div`
   display: flex;
@@ -9,6 +12,7 @@ const Card = styled.div`
   border-radius: 5px;
   margin: 10px 0;
   box-shadow: 0 5px 10px;
+  animation: 1s ${fadeAnimation};
 `;
 
 const Details = styled.div`
