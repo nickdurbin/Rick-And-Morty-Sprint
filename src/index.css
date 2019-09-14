@@ -2,6 +2,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 main {
@@ -27,13 +39,15 @@ main {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
-/*
+
 .main-img {
   display: block;
   border-radius: 100%;
   margin: 0 auto;
-} */
+}
 
 header h1 {
   text-align: center;
+  margin: 3rem auto;
+  padding: 3rem auto;
 }

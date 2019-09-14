@@ -12,6 +12,7 @@ const Card = styled.div`
   box-shadow: 0 5px 10px;
 `;
 
+
 const Button = styled.button`
   width: 50%;
   height: 30px;
@@ -30,14 +31,15 @@ const Button = styled.button`
   }
 `;
 
-function LocationCard({ locationList, deleteCard }) {
+
+function EpisodeCard({ episodeList, deleteCard }) {
   return (
     <>
-      {locationList.map((card, index) => (
+      {episodeList.map((card, index) => (
         <Card key={index} index={index}>
           <h2> {card.name} </h2>
-          <h4> {card.type} </h4>
-          <h4> {card.dimension} </h4>
+          <h4> {card.air_date} </h4>
+          <h4> {card.episode} </h4>
           <Button onClick={() => deleteCard(card.id)}>Delete</Button>
         </Card>
       ))}
@@ -45,4 +47,4 @@ function LocationCard({ locationList, deleteCard }) {
   )
 }
 
-export default LocationCard;
+export default EpisodeCard;
