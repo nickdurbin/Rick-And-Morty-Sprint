@@ -1,5 +1,6 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 const Card = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const Card = styled.div`
 const Details = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 `;
 
 const Span = styled.span`
@@ -30,6 +32,7 @@ function CharacterCard({ cardList }) {
             <h4> <Span>{card.species} {card.status} </Span> </h4>
             <h3> {card.location.name} </h3>
             <h4> {card.origin.name} </h4>
+            <Link to='/episodes'><Span>Episodes</Span></Link>
           </Details>
         </Card>
       ))}
